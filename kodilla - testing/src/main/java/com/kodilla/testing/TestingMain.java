@@ -2,6 +2,10 @@ package com.kodilla.testing;
 
 import com.kodilla.testing.calculator.Calculator;
 import com.kodilla.testing.user.SimpleUser;
+import com.sun.source.util.SourcePositions;
+
+import java.net.SocketOption;
+import java.sql.SQLOutput;
 
 public class TestingMain {
     public static void main(String[] args){
@@ -17,30 +21,16 @@ public class TestingMain {
 
 
         Calculator calculate = new Calculator();
-        Calculator sum = new Calculator();
-        Calculator substraction = new Calculator();
-
 
         int sumingAB = calculate.summing(15, 10);
-        int substractingAB = calculate.substract(15, 10);
+        int substractingAB = calculate.substracting(15, 10);
 
-        if (sum.equals(sumingAB)) {
-            System.out.println("Suming test is correct");
+        if (sumingAB == 25 && substractingAB == 5) {
+            System.out.println("Calculator test is correct");
         } else {
             System.out.println("Error");
         }
-
-
-        if (substraction.equals(substractingAB)) {
-            System.out.println("Substracting test is correct");
-        } else {
-            System.out.println("Error");
-        }
-
-
-
-
-
-
+        System.out.println(sumingAB);
+        System.out.println(substractingAB);
     }
 }
