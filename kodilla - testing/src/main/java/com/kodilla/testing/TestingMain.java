@@ -26,11 +26,9 @@ public class TestingMain {
         int substractingAB = calculate.substracting(15, 10);
 
         if (sumingAB == 25 && substractingAB == 5) {
-            System.out.println("Calculator test is correct");
+            System.out.println("Calculator test is correct.");
         } else {
             System.out.println("Error");
         }
-        System.out.println(sumingAB);
-        System.out.println(substractingAB);
     }
 }

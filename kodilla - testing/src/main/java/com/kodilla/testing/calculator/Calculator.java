@@ -4,14 +4,11 @@ public class Calculator {
 
     private int a;
     private int b;
-    private int sum = a + b;
-    private int substraction = a - b;
 
     public int summing(int a, int b){
-        return sum;
+        return a + b;
     }
-
     public int substracting(int a, int b){
-        return substraction;
+        return a - b;
     }
 }
