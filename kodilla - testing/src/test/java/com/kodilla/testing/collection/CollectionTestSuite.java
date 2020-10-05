@@ -57,7 +57,9 @@ class CollectionTestSuite {
         //When
         ArrayList<Integer> resultList = OddNumbersExterminator.exterminate(evenAndUnevenNumbersList);
         System.out.println("Now we are testing evenAndUnevenNumbersList");
+
         //Then
         Assertions.assertEquals(evenNumbersList, resultList);
     }
 }
+
