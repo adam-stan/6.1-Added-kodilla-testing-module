@@ -1,25 +1,14 @@
 package com.kodilla.stream;
 
-import com.kodilla.stream.forumuser.Forum;
-import com.kodilla.stream.forumuser.ForumUser;
-
-import java.util.Map;
-import java.util.stream.Collectors;
-import static java.time.LocalDate.now;
+import com.kodilla.stream.beautifier.PoemBeautifier;
 
 public class StreamMain {
     public static void main(String[] args) {
-        Forum forum = new Forum();
+        PoemBeautifier poemBeautifier = new PoemBeautifier();
 
-        Map<Integer, ForumUser> theResultUserList = forum.getUserList().stream()
-                .filter(forumUser -> forumUser.getSex() == 'M')
-                .filter(forumUser -> forumUser.getDateOfBirth().isBefore(now().minusYears(20)))
-                .filter(forumUser -> forumUser.getNumberOfPosts() > 0)
-                .collect(Collectors.toMap(ForumUser::getIdentifier, forumUser -> forumUser));
-
-        theResultUserList.entrySet().stream()
-                .map(entry -> entry.getKey() + ": " + entry.getValue())
-                .forEach(System.out::println);
+        poemBeautifier.beautify("Pandemia przyspiesza.", (a) -> "ABC " + a + " ABC");
+        poemBeautifier.beautify("Dziś 3003 nowe przypadki koronawirusa.", (a) -> a.toUpperCase());
+        poemBeautifier.beautify("Trump chyba przegra wybory w USA,", (a) -> a + " ale w sumie niewiadomo.");
+        poemBeautifier.beautify("Ten tekst nie zostanie wyświetlony w całości.", (a) -> a.substring(0,39));
     }
 }
-
