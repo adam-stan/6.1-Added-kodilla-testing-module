@@ -1,4 +1,4 @@
-package com.kodilla.stream;
+package test.java.com.kodilla.stream;
 
 import com.kodilla.stream.iterate.NumbersGenerator;
 
