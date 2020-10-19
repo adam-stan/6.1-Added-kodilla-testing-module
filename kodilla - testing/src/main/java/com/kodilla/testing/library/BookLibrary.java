@@ -22,6 +22,10 @@ public class BookLibrary {
     }
 
     public List<Book> listBooksInHandsOf(LibraryUser libraryUser){
+        List<Book> bookList = new ArrayList<Book>();
+        int numberOfBooks = 0;
+        if (numberOfBooks == 0) return bookList;
+
 
 
 
