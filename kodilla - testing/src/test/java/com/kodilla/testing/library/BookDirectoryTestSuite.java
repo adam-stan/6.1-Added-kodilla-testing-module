@@ -100,9 +100,6 @@ class BookDirectoryTestSuite {
 
     // testing listBooksInHandsOf
 
-    @Mock
-    private LibraryDatabase libraryDatabaseMock;
-
     @Test
     void listBooksInHandsOf1() {
         // Given
