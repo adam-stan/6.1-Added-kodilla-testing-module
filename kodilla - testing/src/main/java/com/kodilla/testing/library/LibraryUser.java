@@ -7,13 +7,11 @@ public class LibraryUser {
     private String firstname;
     private String lastname;
     private String peselId;
-    private int numberOfBooks;
 
-    public LibraryUser(String firstname, String lastname, String peselId, int numberOfBooks) {
+    public LibraryUser(String firstname, String lastname, String peselId) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.peselId = peselId;
-        this.numberOfBooks = numberOfBooks;
     }
 
     public String getFirstname() {
@@ -40,14 +38,6 @@ public class LibraryUser {
         this.peselId = peselId;
     }
 
-    public int getNumberOfBooks() {
-        return numberOfBooks;
-    }
-
-    public void setNumberOfBooks(int numberOfBooks) {
-        this.numberOfBooks = numberOfBooks;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -60,6 +50,6 @@ public class LibraryUser {
 
     @Override
     public int hashCode() {
-        return Objects.hash(firstname, lastname, peselId, numberOfBooks);
+        return Objects.hash(firstname, lastname, peselId);
     }
 }

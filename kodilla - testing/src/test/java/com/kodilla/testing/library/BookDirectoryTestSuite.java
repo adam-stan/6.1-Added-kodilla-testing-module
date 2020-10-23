@@ -100,6 +100,7 @@ class BookDirectoryTestSuite {
 
     // testing listBooksInHandsOf
 
+
     @Test
     void listBooksInHandsOf1() {
         // Given
@@ -107,15 +108,15 @@ class BookDirectoryTestSuite {
         List<Book> listBooksInHandsOf = new ArrayList<Book>();
         Book book1 = new Book("Secrets of Alamo", "John Smith", 2008);
         listBooksInHandsOf.add(book1);
-        when(libraryDatabaseMock.listBooksInHandsOf(1)
+        LibraryUser libraryUser = new LibraryUser("Jan", "Kot", "93120600627");
+        when(libraryDatabaseMock.listBooksInHandsOf(libraryUser))
                 .thenReturn(listBooksInHandsOf);
 
         // When
-        List<Book> theListOfBooks1 = bookLibrary.listBooksInHandsOf(1);
+        List<Book> result = bookLibrary.listBooksInHandsOf(libraryUser);
 
         // Then
-        assertEquals(1, theListOfBooks1.size());
-
+        assertEquals(1, result.size());
     }
 
     @Test
@@ -123,14 +124,15 @@ class BookDirectoryTestSuite {
         // Given
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
         List<Book> listBooksInHandsOf = new ArrayList<Book>();
-        when(libraryDatabaseMock.listBooksInHandsOf(0)
+        LibraryUser libraryUser = new LibraryUser("Jan", "Kot", "93120600627");
+        when(libraryDatabaseMock.listBooksInHandsOf(libraryUser))
                 .thenReturn(listBooksInHandsOf);
 
         // When
-        List<Book> theListOfBooks0 = bookLibrary.listBooksInHandsOf(0);
+        List<Book> result = bookLibrary.listBooksInHandsOf(libraryUser);
 
         // Then
-        assertEquals(0, theListOfBooks0.size());
+        assertEquals(0, result.size());
 
     }
     @Test
@@ -138,6 +140,7 @@ class BookDirectoryTestSuite {
         // Given
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
         List<Book> listBooksInHandsOf = new ArrayList<Book>();
+        LibraryUser libraryUser = new LibraryUser("Jan", "Kot", "93120600627");
         Book book1 = new Book("Secrets of Alamo", "John Smith", 2008);
         Book book2 = new Book("Secretaries and Directors", "Dilbert Michigan", 2012);
         Book book3 = new Book("Secret life of programmers", "Steve Wolkowitz", 2016);
@@ -145,14 +148,19 @@ class BookDirectoryTestSuite {
         Book book5 = new Book("Secrets of Beer", "Janusz Paliknot", 2018);
 
         listBooksInHandsOf.add(book1);
-        when(libraryDatabaseMock.listBooksInHandsOf(5)
+        listBooksInHandsOf.add(book2);
+        listBooksInHandsOf.add(book3);
+        listBooksInHandsOf.add(book4);
+        listBooksInHandsOf.add(book5);
+
+        when(libraryDatabaseMock.listBooksInHandsOf(libraryUser))
                 .thenReturn(listBooksInHandsOf);
 
         // When
-        List<Book> theListOfBooks5 = bookLibrary.listBooksInHandsOf(5);
+        List<Book> result = bookLibrary.listBooksInHandsOf(libraryUser);
 
         // Then
-        assertEquals(5, theListOfBooks5.size());
+        assertEquals(5, result.size());
 
     }
 }
