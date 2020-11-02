@@ -3,8 +3,6 @@ import java.time.LocalDate;
 import java.util.Objects;
 import java.lang.*;
 
-
-
 public final class ForumUser {
 
     private final int identifier;
