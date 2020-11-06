@@ -1,14 +1,19 @@
 import com.kodilla.blackjack.Game;
 import javafx.application.Application;
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.RowConstraints;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+
+import java.awt.*;
 
 public class TicTacToe extends Application {
 
@@ -23,17 +28,22 @@ public class TicTacToe extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        StackPane stackPane = new StackPane();
-        Scene scene = new Scene(stackPane, 600, 600, Color.CORAL);
-        primaryStage.setScene(scene);
 
         primaryStage.setWidth(600);
         primaryStage.setHeight(600);
 
-        GridPane gridPane = new GridPane();
 
         //  Utworzyć Grid Pane 3 na 3.
         // Ustawić row consstrains i column constrains grid pane na 200
+
+        GridPane gridPane = new GridPane();
+        // jak ustawić ile ma być kolumni wierszy, ale może ustawienie constraitów już to rozwiązuje
+
+        for(int n = 0; n < 3; n++){
+            gridPane.getColumnConstraints().add(new ColumnConstraints(200));
+            gridPane.getRowConstraints().add(new RowConstraints(200));
+
+        }
 
         Game game = new Game();
 
@@ -45,6 +55,8 @@ public class TicTacToe extends Application {
             gameFlow.duclick(x, y);
             gameFlow.displayOnBoard();
         });
+        Scene scene = new Scene(gridPane, 600, 600, Color.CORAL);
+        primaryStage.setScene(scene);
 
         primaryStage.setTitle("Tic Tac Toe");
         primaryStage.show();
