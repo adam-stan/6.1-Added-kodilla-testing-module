@@ -1,7 +1,13 @@
 package com.kodilla.stream.array;
 
-public interface ArrayOperations {
-    public static getAverage(int[] numbers){
+import java.util.stream.IntStream;
 
+public interface ArrayOperations {
+    static double getAverage(int[] numbers){
+
+        IntStream.range(0, numbers.length).forEach(System.out :: println);
+
+        double average = IntStream.range(0, numbers.length).average().getAsDouble();
+        return average;
     }
 }
