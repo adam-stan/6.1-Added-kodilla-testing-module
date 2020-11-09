@@ -56,4 +56,25 @@ public class ArrayOperationsTestSuite {
         assertEquals(15, average);
         System.out.println(average);
     }
+
+    @Test
+    public void testWhyNotWork() {
+
+        //Given
+        int n;
+        int numbers[] = new int[20];
+
+        //When
+        double average = ArrayOperations.getAverage(numbers);
+
+        //Then
+        for (n = 0; n < numbers.length; n++) {
+            numbers[n] = n;
+            assertEquals(9.5, average);
+        }
+        System.out.println(average);
+    }
 }
+
+
+
