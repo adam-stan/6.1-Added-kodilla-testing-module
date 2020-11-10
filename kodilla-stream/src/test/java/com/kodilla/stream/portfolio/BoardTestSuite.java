@@ -143,4 +143,23 @@ class BoardTestSuite {
         //Then
         assertEquals(2, longTasks);                                       // [9]
     }
+
+    @Test
+    void testAddTaskListAverageWorkingOnTask() {
+        //Given
+        Board project = prepareTestData();
+
+        //When
+        List<TaskList> averageDaysTasksInProgress = new ArrayList<>();
+        averageDaysTasksInProgress.add(new TaskList("In progress"));
+        long tasks = project.getTaskLists().stream()
+
+                .filter(averageDaysTasksInProgress::contains)
+                .flatMap(tl -> tl.getTasks().stream())
+                .count();
+
+        //Then
+        assertEquals(3, tasks);
+
+    }
 }
