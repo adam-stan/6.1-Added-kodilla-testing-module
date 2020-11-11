@@ -63,6 +63,9 @@ public class ArrayOperationsTestSuite {
         //Given
         int n;
         int numbers[] = new int[20];
+        for (n = 0; n < numbers.length; n++) {
+            numbers[n] = n;
+        }
 
         //When
         double average = ArrayOperations.getAverage(numbers);
@@ -70,8 +73,8 @@ public class ArrayOperationsTestSuite {
         //Then
         for (n = 0; n < numbers.length; n++) {
             numbers[n] = n;
-            assertEquals(9.5, average);
         }
+        assertEquals(9.5, average);
         System.out.println(average);
     }
 }

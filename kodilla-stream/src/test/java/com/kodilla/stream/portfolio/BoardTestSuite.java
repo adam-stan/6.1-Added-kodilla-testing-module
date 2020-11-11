@@ -157,6 +157,7 @@ class BoardTestSuite {
                 .filter(averageDaysTasksInProgress::contains)
                 .flatMap(tl -> tl.getTasks().stream())
                 .count();
+        
 
         //Then
         assertEquals(3, tasks);
