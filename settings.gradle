@@ -3,4 +3,5 @@ include 'kodilla - testing'
 include 'kodilla-stream'
 include 'tic-tac-toe'
 include 'kodilla-exception'
+include 'various-excercises'
 

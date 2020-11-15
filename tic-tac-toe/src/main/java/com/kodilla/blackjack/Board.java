@@ -16,4 +16,15 @@ public class Board {
     public void setFigure(int col, int row, String figure){
         rows.get(row).getCols().set(col, figure);
     }
+
+    public boolean noFreeSlots() {
+        boolean result = true;
+        for(int row = 0; row < 3; row++) {
+            for(int col = 0; col < 3; col++) {
+                if(getFigure(col, row).equals(" "))
+                    result = false;
+            }
+        }
+        return result;
+    }
 }
