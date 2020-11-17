@@ -17,7 +17,6 @@ public class BlackJack extends Application {
     private Image card = new Image("file:src/main/resources/k.png");
     private FlowPane cards = new FlowPane(Orientation.HORIZONTAL);
 
-
     public static void main(String[] args) {
         launch(args);
     }

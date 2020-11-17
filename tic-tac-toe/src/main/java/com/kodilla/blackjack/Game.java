@@ -1,15 +1,5 @@
 package com.kodilla.blackjack;
 
-import javafx.scene.Group;
-import javafx.scene.Node;
-import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
-
-import javax.swing.*;
-import java.awt.*;
-import java.util.Collection;
-
 public class Game {
     private Board board = new Board();
     private String whoMoves = "X";
@@ -44,7 +34,6 @@ public class Game {
         s = board.getFigure(0, 2) + board.getFigure(1, 1) + board.getFigure(2, 0);
         if (s.equals("XXX")) return "X";
         if (s.equals("OOO")) return "O";
-
         return " ";
     }
 
@@ -75,14 +64,17 @@ public class Game {
     }
 
     public void showWinner() {
-        Label showWinner = new Label("Player won the game");
-
-        Group group = new Group();
-        Scene scene = new Scene(group, 600, 300);
-        Stage primaryStage = new Stage();
-
-        primaryStage.setScene(scene);
-        primaryStage.show();
-
+        if (checkWinner().equals("X")) {
+            Xwon xWon = new Xwon();
+            xWon.show();
+        }
+        if (checkWinner().equals("O")) {
+            Owon oWon = new Owon();
+            oWon.show();
+        }
+        if (board.noFreeSlots() == true && (!checkWinner().equals("X")) && (!checkWinner().equals("O"))) {
+            NoWinner noWinner = new NoWinner();
+            noWinner.show();
+        }
     }
 }

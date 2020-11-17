@@ -5,7 +5,7 @@ plugins {
 
 javafx {
     version = "11.0.2"
-    modules = [ 'javafx.controls' ]
+    modules = [ 'javafx.controls', 'javafx.base', 'javafx.graphics']
 }
 
 group 'org.example'
@@ -18,5 +18,4 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
-
 }

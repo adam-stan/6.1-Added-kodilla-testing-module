@@ -3,17 +3,12 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 
-import javax.swing.*;
-import java.awt.*;
-
 public class Gameflow {
     private final GridPane gridPane;
     private Game game;
 
     private Image cross1 = new Image("file:tic-tac-toe/src/main/resources/cross.png");
     private Image circle1 = new Image("file:tic-tac-toe/src/main/resources/circle.png");
-    private Image noWinnerImage = new Image("file:tic-tac-toe/src/main/resources/noWinner.png");
-
 
     public Gameflow(GridPane gridPane, Game game) {
         this.gridPane = gridPane;
@@ -22,16 +17,14 @@ public class Gameflow {
 
     public void doClick(int col, int row) {
         game.move(col, row);
-        if(!game.checkWinner().equals(" ")) {
-
+        if (!game.checkWinner().equals(" ")) {
             game.showWinner();
-
-            System.out.println("There's a winner: " + game.checkWinner());
+            game.checkWinner();
             game = new Game();
             displayOnBoard();
         }
-        if(game.getBoard().noFreeSlots()) {
-            System.out.println("There is no winner. Try again");
+        if (game.getBoard().noFreeSlots()) {
+            game.showWinner();
             game = new Game();
             displayOnBoard();
         }
@@ -43,23 +36,14 @@ public class Gameflow {
             for (int row = 0; row < 3; row++) {
                 ImageView imageView = null;
                 if (game.getBoard().getFigure(col, row).equals("X")) {
-
-                    // wstawić odpowiednie obrazki w tych ifach do imageView
                     imageView = new ImageView(cross1);
-
                 } else if (game.getBoard().getFigure(col, row).equals("O")) {
                     imageView = new ImageView(circle1);
-
-                } else {
-
                 }
                 if (imageView != null) {
                     gridPane.add(imageView, col, row);
                 }
-
             }
-            // po tym jak zrobie te w komentarzach powinno się klikać ale nie będzie zwycięscy
-
         }
     }
 }

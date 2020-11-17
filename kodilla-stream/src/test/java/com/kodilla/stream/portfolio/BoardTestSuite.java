@@ -161,6 +161,5 @@ class BoardTestSuite {
 
         //Then
         assertEquals(10, tasks);
-
     }
 }
