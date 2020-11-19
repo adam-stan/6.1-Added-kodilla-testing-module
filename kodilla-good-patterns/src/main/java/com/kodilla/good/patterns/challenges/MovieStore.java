@@ -32,7 +32,8 @@ class MovieStore {
 
         MovieStore movieStore = new MovieStore();
         movieStore.getMovies().entrySet().stream()
-                .map(title -> title.getValue() + "! ")
+                .flatMap(title -> title.getValue().stream())
+                .map(t -> t + "! ")
                 .forEach(System.out::print);
     }
 }
