@@ -5,4 +5,5 @@ include 'tic-tac-toe'
 include 'kodilla-exception'
 include 'various-excercises'
 include 'kodilla-good-patterns'
+include 'kodilla-spring-intro'
 

@@ -15,7 +15,8 @@ public class FlightSearching {
         canFly.put("Gdansk", false);
         canFly.put("Lodz", true);
 
-        if (!canFly.isEmpty() && canFly.containsValue(true)) {
+
+        if (canFly.get("Warsaw").booleanValue()) {
             System.out.println("You can fly there");
         }
 
