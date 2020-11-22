@@ -15,11 +15,9 @@ public class FlightSearching {
         canFly.put("Gdansk", false);
         canFly.put("Lodz", true);
 
-
-        if (canFly.get("Warsaw").booleanValue()) {
+        Boolean result = canFly.get(flight.getArrivalAirport());
+        if (result != null && result) {
             System.out.println("You can fly there");
-        }
-
-        else throw new RouteNotFoundException();
+        } else throw new RouteNotFoundException();
     }
 }
