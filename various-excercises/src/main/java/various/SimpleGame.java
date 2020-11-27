@@ -1,6 +1,4 @@
-package simpleGame;
-
-import org.w3c.dom.ls.LSOutput;
+package various;
 
 import java.util.Random;
 import java.util.Scanner;

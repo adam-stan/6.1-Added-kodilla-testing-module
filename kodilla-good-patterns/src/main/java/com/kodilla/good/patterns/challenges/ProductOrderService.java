@@ -1,32 +1,30 @@
 package com.kodilla.good.patterns.challenges;
 
 public class ProductOrderService {
-    public class RentalProcessor {
 
         private InformationService informationService;
-        private RentalService rentalService;
-        private RentalRepository rentalRepository;
+        private SaleService saleService;
+        private SaleRepository saleRepository;
 
-        public RentalProcessor(final InformationService informationService,
-                               final RentalService rentalService,
-                               final RentalRepository rentalRepository) {
+        public ProductOrderService(final InformationService informationService,
+                               final SaleService saleService,
+                               final SaleRepository saleRepository) {
             this.informationService = informationService;
-            this.rentalService = rentalService;
-            this.rentalRepository = rentalRepository;
+            this.saleService = saleService;
+            this.saleRepository = saleRepository;
         }
 
-        public RentalDto process(final RentRequest rentRequest) {
-            boolean isRented = rentalService.rent(rentRequest.getUser(), rentRequest.getFrom(),
-                    rentRequest.getTo());
+        public SaleDto process(final SaleRequest saleRequest) {
+            boolean isSale = saleService.sale(saleRequest.getUser(), saleRequest.getFrom(),
+                    saleRequest.getTo());
 
-            if (isRented) {
-                informationService.inform(rentRequest.getUser());
-                rentalRepository.createRental(rentRequest.getUser(), rentRequest.getFrom(), rentRequest.getTo());
-                return new RentalDto(rentRequest.getUser(), true);
+            if (isSaled) {
+                informationService.inform(saleRequest.getUser());
+                saleRepository.createSale(saleRequest.getUser(), saleRequest.getFrom(), saleRequest.getTo());
+                return new SaleDto(saleRequest.getUser(), true);
             } else {
-                return new RentalDto(rentRequest.getUser(), false);
+                return new SaleDto(saleRequest.getUser(), false);
             }
         }
     }
-}
 
