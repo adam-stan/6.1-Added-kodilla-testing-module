@@ -16,4 +16,8 @@ public class SaleDto {
     public boolean isSaled() {
         return isSaled;
     }
+
+    public String toString(){
+        return user + " " + isSaled;
+    }
 }

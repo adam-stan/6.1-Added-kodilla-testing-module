@@ -15,12 +15,11 @@ public class ProductOrderService {
         }
 
         public SaleDto process(final SaleRequest saleRequest) {
-            boolean isSale = saleService.sale(saleRequest.getUser(), saleRequest.getFrom(),
-                    saleRequest.getTo());
+            boolean isSale = saleService.createSale(saleRequest.getUser(), saleRequest.getDate());
 
-            if (isSaled) {
+            if (isSale) {
                 informationService.inform(saleRequest.getUser());
-                saleRepository.createSale(saleRequest.getUser(), saleRequest.getFrom(), saleRequest.getTo());
+                saleRepository.createSale(saleRequest.getUser(), saleRequest.getDate());
                 return new SaleDto(saleRequest.getUser(), true);
             } else {
                 return new SaleDto(saleRequest.getUser(), false);
