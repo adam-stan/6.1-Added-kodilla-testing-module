@@ -27,4 +27,23 @@ public class Flight {
                 ", finalAirports='" + finalAirports + '\'' +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Flight flight = (Flight) o;
+
+        if (startAirports != null ? !startAirports.equals(flight.startAirports) : flight.startAirports != null)
+            return false;
+        return finalAirports != null ? finalAirports.equals(flight.finalAirports) : flight.finalAirports == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = startAirports != null ? startAirports.hashCode() : 0;
+        result = 31 * result + (finalAirports != null ? finalAirports.hashCode() : 0);
+        return result;
+    }
 }
