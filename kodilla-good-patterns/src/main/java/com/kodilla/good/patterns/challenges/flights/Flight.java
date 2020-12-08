@@ -5,12 +5,10 @@ import java.util.List;
 public class Flight {
 
     private String startAirports;
-    private String indirectAirports;
     private String finalAirports;
 
-    public Flight(String startAirports, String indirectAirports, String finalAirports) {
+    public Flight(String startAirports, String finalAirports) {
         this.startAirports = startAirports;
-        this.indirectAirports = indirectAirports;
         this.finalAirports = finalAirports;
     }
 
@@ -18,11 +16,15 @@ public class Flight {
         return startAirports;
     }
 
-    public String getInDirectAirports() {
-        return indirectAirports;
-    }
-
     public String getFinalAirports() {
         return finalAirports;
+    }
+
+    @Override
+    public String toString() {
+        return "Flight{" +
+                "startAirports='" + startAirports + '\'' +
+                ", finalAirports='" + finalAirports + '\'' +
+                '}';
     }
 }
