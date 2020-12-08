@@ -47,6 +47,8 @@ public class FindFlight {
                 List<Flight> startFlight = findFlightsFrom(interlineStartAirports);
                 List<Flight> finalFlight = findFlightsTo(interlineFinalAirports);
 
+                return result;
+
 
 
     }
