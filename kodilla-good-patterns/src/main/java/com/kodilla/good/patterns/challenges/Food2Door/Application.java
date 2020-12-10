@@ -13,7 +13,6 @@ public class Application {
                 new Product("tomatoes", 5.0));
 
         SaleDto saleDto = productOrderService.process(saleRequest);
-
         System.out.println(saleDto);
     }
 }

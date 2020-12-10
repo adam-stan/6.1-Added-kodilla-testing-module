@@ -35,10 +35,8 @@ public class FindFlight {
         List<Flight> startFlight = findFlightsFrom(interlineStartAirports);
         List<Flight> finalFlight = findFlightsTo(interlineFinalAirports);
 
-
         for (Flight startF : startFlight) {
             for (Flight finalF : finalFlight) {
-                // w if powinno być porównanie miasta końcowego z lotu startF z miastem początkowym lotu finalF
                 if (startF.getFinalAirports().equals(finalF.getStartAirports())) {
                     result.add(startF);
                     result.add(finalF);
