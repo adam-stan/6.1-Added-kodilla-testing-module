@@ -7,13 +7,12 @@ public class Application {
         FindFlight findFlight = new FindFlight();
 
         System.out.println("These are all flights from Warszawa:");
-        findFlight.findFlightsFrom("Warszawa");
+        System.out.println(findFlight.findFlightsFrom("Warszawa"));
 
         System.out.println("These are all flights to Gdansk:");
-        findFlight.findFlightsTo("Gdansk");
+        System.out.println(findFlight.findFlightsTo("Gdansk"));
 
-
-        findFlight.findFlightFromToThrough("Gdansk", "Warszawa");
-
+        System.out.println("These are all flights from Gdansk to Warszawa through another city:");
+        System.out.println(findFlight.findFlightFromToThrough("Gdansk", "Warszawa"));
     }
 }
