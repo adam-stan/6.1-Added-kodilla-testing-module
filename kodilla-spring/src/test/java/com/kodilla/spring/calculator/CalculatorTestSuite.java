@@ -21,7 +21,7 @@ public class CalculatorTestSuite {
         Double adding = calculator.add(1, 1);
 
         //Then
-        assertEquals(adding, 2);
+        assertEquals(2, adding);
     }
 
     @Test
@@ -35,7 +35,7 @@ public class CalculatorTestSuite {
         Double substring = calculator.sub(1, 1);
 
         //Then
-        assertEquals(substring, 0);
+        assertEquals(0, substring);
     }
 
     @Test
@@ -49,7 +49,7 @@ public class CalculatorTestSuite {
         Double multiply = calculator.mul(2, 2);
 
         //Then
-        assertEquals(multiply, 4);
+        assertEquals(4, multiply);
     }
 
     @Test
@@ -63,7 +63,7 @@ public class CalculatorTestSuite {
         Double divine = calculator.div(1, 1);
 
         //Then
-        assertEquals(divine, 1);
+        assertEquals(1, divine);
     }
 
     @Test
