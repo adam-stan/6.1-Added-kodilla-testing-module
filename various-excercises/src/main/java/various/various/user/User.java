@@ -1,4 +1,4 @@
-package various;
+package various.various.user;
 
 public class User {
     private String name;

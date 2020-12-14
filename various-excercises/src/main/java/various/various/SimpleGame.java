@@ -1,4 +1,4 @@
-package various;
+package various.various;
 
 import java.util.Random;
 import java.util.Scanner;

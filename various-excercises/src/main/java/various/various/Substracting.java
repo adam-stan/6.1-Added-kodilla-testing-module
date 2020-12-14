@@ -1,4 +1,4 @@
-package various;
+package various.various;
 
 public class Substracting {
     public double substracting(double a, double b) {
