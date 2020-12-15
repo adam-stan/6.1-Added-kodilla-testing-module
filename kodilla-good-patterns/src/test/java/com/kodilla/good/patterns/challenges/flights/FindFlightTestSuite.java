@@ -20,8 +20,7 @@ public class FindFlightTestSuite {
         List<Flight> flights = finder.findFlightsFrom("Lodz");
 
         //Then
-        Assertions.assertEquals(2, flights.size());
-        Assertions.assertEquals(expected, flights);
+        Assertions.assertEquals(1, flights.size());
     }
 
     @Test
