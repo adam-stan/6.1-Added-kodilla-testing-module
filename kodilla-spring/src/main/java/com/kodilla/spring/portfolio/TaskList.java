@@ -11,4 +11,15 @@ public class TaskList {
     public TaskList() {
         tasks = new ArrayList<>();
     }
+
+    @Override
+    public String toString() {
+        return "TaskList{" +
+                "tasks=" + tasks +
+                '}';
+    }
+
+    public void addTask(String newTask) {
+        tasks.add(newTask);
+    }
 }

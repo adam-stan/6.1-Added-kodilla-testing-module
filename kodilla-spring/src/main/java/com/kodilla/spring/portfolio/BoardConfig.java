@@ -1,4 +1,5 @@
 package com.kodilla.spring.portfolio;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -22,25 +23,24 @@ public class BoardConfig {
 
     @Bean(name = "toDo")
     @Scope("prototype")
-    public TaskList getToDoList(){
+    public TaskList getToDoList() {
         return new TaskList();
     }
 
     @Bean(name = "inProgress")
     @Scope("prototype")
-    public TaskList getInProgressList(){
+    public TaskList getInProgressList() {
         return new TaskList();
     }
 
     @Bean(name = "done")
     @Scope("prototype")
-    public TaskList getDoneList(){
+    public TaskList getDoneList() {
         return new TaskList();
     }
 
     @Bean(name = "board")
-    public Board createBoard(){
+    public Board createBoard() {
         return new Board(toDoList, inProgressList, doneList);
     }
-
 }

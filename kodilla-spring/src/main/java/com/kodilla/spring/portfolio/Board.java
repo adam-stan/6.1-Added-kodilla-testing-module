@@ -1,8 +1,6 @@
 package com.kodilla.spring.portfolio;
 
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Board {
 
@@ -29,5 +27,4 @@ public class Board {
     public TaskList getDoneList() {
         return doneList;
     }
-
 }
