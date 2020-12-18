@@ -6,6 +6,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import java.util.Arrays;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class BoardTestSuite {
 
     @Test
@@ -37,5 +39,9 @@ public class BoardTestSuite {
         Arrays.stream(context.getBeanDefinitionNames())
                 .forEach(System.out::println);
         System.out.println("<< ===== Beans list ====");
+
+        assertEquals("TaskList{tasks=[Something new]}", board.getToDoList().toString());
+        assertEquals("TaskList{tasks=[Something new]}", board.getInProgressList().toString());
+        assertEquals("TaskList{tasks=[Something new]}", board.getDoneList().toString());
     }
 }
