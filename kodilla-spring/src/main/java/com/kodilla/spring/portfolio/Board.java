@@ -8,9 +8,9 @@ public class Board {
     private TaskList inProgressList;
     private TaskList doneList;
 
-    public Board(@Qualifier("toDo") TaskList toDoList,
-                 @Qualifier("inProgress") TaskList inProgressList,
-                 @Qualifier("done") TaskList doneList) {
+    public Board(TaskList toDoList,
+                 TaskList inProgressList,
+                 TaskList doneList) {
         this.toDoList = toDoList;
         this.inProgressList = inProgressList;
         this.doneList = doneList;
