@@ -24,13 +24,7 @@ public class PaintingTask implements Task {
     }
 
     public boolean isTaskExecuted() {
-        if (isExecuted) {
-            System.out.println("Task " + getTaskName() + " is executed.");
-            return true;
-        } else {
-            System.out.println("Task " + getTaskName() + " is not executed.");
-            return !isExecuted;
-        }
+        return isExecuted;
     }
 }
 
