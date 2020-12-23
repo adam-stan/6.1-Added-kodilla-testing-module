@@ -10,11 +10,11 @@ public class TaskFactory {
 
         switch (chosenTask) {
             case SHOPPINGTASK:
-                return new ShoppingTask("Chemical products", "Window cleaner, Floor soap", 1.0);
+                return new ShoppingTask("Chemical products", "Window cleaner, Floor soap", 1.0, true);
             case PAINTINGTASK:
-                return new PaintingTask("Paints", "Red and yellow", "Picture");
+                return new PaintingTask("Paints", "Red and yellow", "Picture", true);
             case DRIVINGTASK:
-                return new DrivingTask("Go to the gym", "Illegal gym in the basement", "Audi A4");
+                return new DrivingTask("Go to the gym", "Illegal gym in the basement", "Audi A4", true);
             default:
                 return null;
         }

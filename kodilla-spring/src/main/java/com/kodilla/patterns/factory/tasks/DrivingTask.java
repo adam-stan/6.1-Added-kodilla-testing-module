@@ -2,39 +2,34 @@ package com.kodilla.patterns.factory.tasks;
 
 public class DrivingTask implements Task {
 
-    private String taskName;
-    private String where;
-    private String using;
+    private final String taskName;
+    private final String where;
+    private final String using;
+    private boolean isExecuted;
 
-    public DrivingTask(String taskName, String where, String using) {
+    public DrivingTask(String taskName, String where, String using, boolean isExecuted) {
         this.taskName = taskName;
         this.where = where;
         this.using = using;
+        this.isExecuted = isExecuted;
     }
 
     public String getTaskName() {
         return taskName;
     }
 
-    public String getWhere() {
-        return where;
-    }
-
-    public String getUsing() {
-        return using;
-    }
-
-    public String executeTask() {
-        return "Ordering task: " + getTaskName();
+    public boolean executeTask() {
+        System.out.println("Ordering task: " + getTaskName());
+        return isExecuted = true;
     }
 
     public boolean isTaskExecuted() {
-        DrivingTask drivingTask = new DrivingTask(taskName, where, using);
-        String result = drivingTask.executeTask();
-        if (result.equals("Ordering task: " + getTaskName())) {
+        if (isExecuted) {
+            System.out.println("Task " + getTaskName() + " is executed.");
             return true;
         } else {
-            return false;
+            System.out.println("Task " + getTaskName() + " is not executed.");
+            return !isExecuted;
         }
     }
 }

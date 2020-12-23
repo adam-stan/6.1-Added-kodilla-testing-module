@@ -18,7 +18,7 @@ public class TaskFactoryTestSuite {
 
         //Then
         assertEquals("Chemical products", shoppingTask.getTaskName());
-        assertEquals("Ordering task: " + shoppingTask.getTaskName(), shoppingTask.executeTask());
+        assertTrue(shoppingTask.executeTask());
         assertTrue(shoppingTask.isTaskExecuted());
     }
 
@@ -33,7 +33,7 @@ public class TaskFactoryTestSuite {
 
         //Then
         assertEquals("Paints", paintingTask.getTaskName());
-        assertEquals("Ordering task: " + paintingTask.getTaskName(), paintingTask.executeTask());
+        assertTrue(paintingTask.executeTask());
         assertTrue(paintingTask.isTaskExecuted());
     }
 
@@ -48,7 +48,7 @@ public class TaskFactoryTestSuite {
 
         //Then
         assertEquals("Go to the gym", drivingTask.getTaskName());
-        assertEquals("Ordering task: " + drivingTask.getTaskName(), drivingTask.executeTask());
+        assertTrue(drivingTask.executeTask());
         assertTrue(drivingTask.isTaskExecuted());
     }
 }
