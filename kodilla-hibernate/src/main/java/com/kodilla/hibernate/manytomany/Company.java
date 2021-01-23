@@ -1,10 +1,17 @@
 package com.kodilla.hibernate.manytomany;
 
-import com.sun.istack.NotNull;
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+
+@NamedNativeQuery(
+        name = "Company.findCompaniesWith3Char",
+        query = "SELECT * NAME FROM COMPANY" +
+               "SUBSTRING('Intel', 0, 2)",
+                resultClass = Company.class
+)
 @Entity
 @Table(name = "COMPANY")
 public class Company {

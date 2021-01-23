@@ -1,11 +1,15 @@
 package com.kodilla.hibernate.manytomany;
 
-import com.sun.istack.NotNull;
-
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+
+@NamedQuery(
+        name = "Employee.findByLastname",
+        query = "FROM Employee WHERE lastname = :STANKIEWICZ"
+)
 @Entity
 @Table(name = "EMPLOYEES")
 public class Employee {

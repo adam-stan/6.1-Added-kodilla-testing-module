@@ -1,3 +1,5 @@
+
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.sql.ResultSet;
@@ -6,6 +8,7 @@ import java.sql.Statement;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@Disabled
 class DbManagerTestSuite {
 
     @Test
