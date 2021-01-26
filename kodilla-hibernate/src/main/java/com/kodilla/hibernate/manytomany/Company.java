@@ -8,9 +8,9 @@ import java.util.List;
 
 @NamedNativeQuery(
         name = "Company.findCompaniesWith3Char",
-        query = "SELECT * NAME FROM COMPANY" +
-               "SUBSTRING('Intel', 0, 2)",
-                resultClass = Company.class
+        query = "SELECT * FROM COMPANY " +
+                "WHERE SUBSTR(NAME, 1, 3) LIKE :NAME",
+        resultClass = Company.class
 )
 @Entity
 @Table(name = "COMPANY")

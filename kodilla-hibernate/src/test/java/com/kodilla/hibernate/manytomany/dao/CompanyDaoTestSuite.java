@@ -71,8 +71,8 @@ class CompanyDaoTestSuite {
     void testQueries() {
 
         //Given
-        Employee adamStan = new Employee("Adam", "STANKIEWICZ");
-        Company intel = new Company("Int");
+        Employee adamStan = new Employee("Adam", "Stankiewicz");
+        Company intel = new Company("INTEL");
 
         employeeDao.save(adamStan);
         int id = adamStan.getId();
@@ -80,23 +80,24 @@ class CompanyDaoTestSuite {
         companyDao.save(intel);
         int id2 = intel.getId();
 
-        intel.getEmployees().add(adamStan);
-        adamStan.getCompanies().add(intel);
-
         //When
-        List<Employee> byLastname = employeeDao.findByLastname("STANKIEWICZ");
-        List<Company> with3Char = companyDao.findCompaniesWith3Char("Int");
+        List<Employee> byLastname = employeeDao.findByLastname("Stankiewicz");
+        List<Company> with3Char = companyDao.findCompaniesWith3Char("INT");
 
         //Then
-        try {
-            assertEquals(1, byLastname.size());
-            assertEquals(1, with3Char.size());
 
-        } finally {
-            //CleanUp
+        assertEquals(1, byLastname.size());
+        assertEquals(1, with3Char.size());
+
+        try {
             employeeDao.deleteById(id);
             companyDao.deleteById(id2);
 
         }
+
+        catch (Exception e) {
+
+        }
+
     }
 }
