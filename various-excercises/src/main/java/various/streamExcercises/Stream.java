@@ -15,18 +15,18 @@ public class Stream {
     Vegetables vegetable3 = new Vegetables("cucumber", "ok", List.of("assssx", "sdssssfccd"));
     Vegetables vegetable4 = new Vegetables("pepper", "good", List.of("sx", "cd"));
 
-        vegetables.add(vegetable);
-        vegetables.add(vegetable2);
-        vegetables.add(vegetable3);
-        vegetables.add(vegetable4);
+    vegetables.add(vegetable);
+    vegetables.add(vegetable2);
+    vegetables.add(vegetable3);
+    vegetables.add(vegetable4);
     }
 
     public void stream1() {
-        List<List<String>> whatever = vegetables.stream()
+        List<List<String>> listOfList = vegetables.stream()
                 .map(Vegetables::getWhatever)
                 .collect(Collectors.toList());
 
-        System.out.println(whatever);
+        System.out.println(listOfList);
 
         List<String> vege2 = vegetables.stream()
                 .map(Vegetables::getWhatever)
