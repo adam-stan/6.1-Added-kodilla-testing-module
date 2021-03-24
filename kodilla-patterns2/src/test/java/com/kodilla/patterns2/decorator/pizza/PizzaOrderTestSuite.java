@@ -1,9 +1,7 @@
 package com.kodilla.patterns2.decorator.pizza;
 
 import org.junit.jupiter.api.Test;
-
 import java.math.BigDecimal;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PizzaOrderTestSuite {
@@ -59,6 +57,7 @@ public class PizzaOrderTestSuite {
 
         //Then
         assertEquals(new BigDecimal(33), getCost);
-        assertEquals("Pizza with tomato sauce, cheese + salami + onion + tomatoes + extra cheese + ham", getDescription);
+        assertEquals("Pizza with tomato sauce, cheese + " +
+                "salami + onion + tomatoes + extra cheese + ham", getDescription);
     }
 }
