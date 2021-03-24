@@ -26,6 +26,7 @@ public class TasksQueue implements Observable {
 
     public void addTask(Task task) {
         tasksList.add(task);
+        notifyMentors();
     }
 
     @Override

@@ -22,19 +22,12 @@ public class TasksQueueTestSuite {
         sadamHusajnTasks.registerMentor(grzegorzBraun);
 
         januszWujecTasks.addTask(new Task("1 task"));
-        jacekPlacek.updateTasks(januszWujecTasks);
-
         januszWujecTasks.addTask(new Task("2 task"));
-        jacekPlacek.updateTasks(januszWujecTasks);
 
         mariuszLeonTasks.addTask(new Task("3 task"));
-        jacekPlacek.updateTasks(mariuszLeonTasks);
 
-        mariuszLeonTasks.addTask(new Task("4 task"));
-        grzegorzBraun.updateTasks(mariuszLeonTasks);
-
+        sadamHusajnTasks.addTask(new Task("4 task"));
         sadamHusajnTasks.addTask(new Task("5 task"));
-        grzegorzBraun.updateTasks(sadamHusajnTasks);
 
         //Then
         assertEquals(3, jacekPlacek.getUpdateCount());
