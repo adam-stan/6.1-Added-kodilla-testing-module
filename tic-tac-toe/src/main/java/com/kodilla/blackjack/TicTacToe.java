@@ -1,4 +1,5 @@
-import com.kodilla.blackjack.Game;
+package com.kodilla.blackjack;
+
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.ColumnConstraints;

@@ -1,4 +1,5 @@
-import com.kodilla.blackjack.Game;
+package com.kodilla.blackjack;
+
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;

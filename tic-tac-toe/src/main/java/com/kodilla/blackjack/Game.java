@@ -72,7 +72,7 @@ public class Game {
             Owon oWon = new Owon();
             oWon.show();
         }
-        if (board.noFreeSlots() == true && (!checkWinner().equals("X")) && (!checkWinner().equals("O"))) {
+        if (board.noFreeSlots() && (!checkWinner().equals("X")) && (!checkWinner().equals("O"))) {
             NoWinner noWinner = new NoWinner();
             noWinner.show();
         }
